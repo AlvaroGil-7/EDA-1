@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in); // Lectura por teclado
@@ -27,6 +27,8 @@ public class main {
 		System.out.println("Por que linea quieres que la cambiemos: ");
 		int linea2 = in.nextInt();
 		linea2 = linea2 - 1;
+		
+		in.close(); // Cerramos el Scanner
 		
 		for(int i = 0; i < dim ; i++) {
 			aux = matrix[linea1][i];
