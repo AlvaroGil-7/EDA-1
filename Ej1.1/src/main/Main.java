@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,7 +8,7 @@ public class Main {
 		Scanner in = new Scanner(System.in); // Lectura por teclado
 
 		int dim = 3; // Dimensión de la matrix
-		int matrix[][] = new int[dim][dim];
+		int[][] matrix = new int[dim][dim];
 
 		// Variables auxiliares
 		int aux = 0;
