@@ -30,13 +30,20 @@ public class Main {
 		int linea2 = in.nextInt();
 		linea2 = linea2 - 1;
 		
-		in.close(); // Cerramos el Scanner
+		in.close(); // Cerramos el Scanner. Esto cierra el System.in para el resto de la ejecución
 		
 		for(int i = 0; i < dim ; i++) {
 			aux = matrix[linea1][i];
 			matrix[linea1][i] = matrix[linea2][i];
 			matrix[linea2][i] = aux;
 		}
+		
+		/* ------------ ALTERNATIVA ------------
+		 * int[] filaAuxiliar = matrix[linea1];
+		 * matrix[linea1] = matrix[linea2];
+		 * matrix[linea2] = filaAuxiliar;
+		 * -------------------------------------
+		 */
 		
 		for(int i = 0; i < dim; i++) {
 			System.out.println();
