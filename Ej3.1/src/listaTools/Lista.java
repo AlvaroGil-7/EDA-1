@@ -33,6 +33,11 @@ public class Lista {
 		
 	}
 	
+	/**
+	 * Insertar objeto al inicio de la lista
+	 * @param dato
+	 * @return lista
+	 */
 	public Lista insertHead(Object dato) {
 		
 		// Creamos un nuevo nodo
@@ -42,6 +47,62 @@ public class Lista {
 		this.primero = nodo;
 		
 		// Devolvemos la lista
+		return this;
+	}
+	
+	public Lista insertLast(Object dato) {
+		
+		// Creamos un nuevo nodo
+		NodoLista nodo = new NodoLista(dato);
+		
+		// Buscamos el último nodo
+		NodoLista ultimoNodo = this.primero;
+		
+		while (ultimoNodo.siguienteNodo != null) {
+			ultimoNodo = ultimoNodo.siguienteNodo;
+		}
+		
+		// Posicionamos nodo en la última posición
+		ultimoNodo.siguienteNodo = nodo;
+		
+		// Devolvemos la lista
+		return this;
+	}
+	
+	public int find(Object dato) {
+		
+		// Creamos las variables necesarias para la ejecución
+		int pos = -1;
+		int i = 0;
+		
+		NodoLista nodoAux = this.primero;
+		
+		do { // Iteramos y comprobamos que el dato sea igual
+			if (nodoAux.dato == dato) {
+				pos = i;
+			} else {
+				nodoAux = nodoAux.siguienteNodo;
+				i++;
+			}
+			
+		} while (pos == -1 && nodoAux != null);
+		
+		return pos;
+	}
+	
+	public Lista remove(Object dato) {
+		
+		// Creamos el nodo auxiliar
+		NodoLista nodoAux = this.primero;
+		
+		// Iteramos en busca del dato
+		do {
+			if (nodoAux.siguienteNodo.dato == dato) {
+				nodoAux.siguienteNodo = nodoAux.siguienteNodo.siguienteNodo;
+			}
+			nodoAux = nodoAux.siguienteNodo;
+		} while (nodoAux.siguienteNodo != null);
+		
 		return this;
 	}
 	
@@ -55,8 +116,17 @@ public class Lista {
 	 * Bonus
 	 * printList() : imprime la lista por pantalla
 	 */
-	public void printList() {
+	@Override
+	public String toString() {
+		String texto = new String();
 		
+		NodoLista nodo = this.primero;
+		
+		do {
+			texto += "\n - " + nodo.dato;
+		} while (nodo.siguienteNodo != null);
+		
+		return texto;
 	}
 	
 }
