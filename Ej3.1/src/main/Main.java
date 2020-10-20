@@ -19,7 +19,7 @@ public class Main {
 		
 		listaCompra.insertHead(ambientador);
 		listaCompra.insertLast(pollo);
-		listaCompra.insertLast(manzana);
+		listaCompra.insertAtPosition(manzana, 1);
 		
 		listaCompra.remove(pollo);
 	}
