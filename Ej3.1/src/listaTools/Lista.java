@@ -1,5 +1,6 @@
 //Alvaro
 //alvaro2
+//Samuel
 package listaTools;
 public class Lista {
 
